@@ -11,6 +11,7 @@
 		<property name="connection.password">12345</property>
 		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 		<mapping class="koikingdom.pojo.Account" />
+		<mapping class="koikingdom.pojo.KoiFish" />
 		
 
 	</session-factory>
