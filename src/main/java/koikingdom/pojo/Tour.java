@@ -1,116 +1,141 @@
 package koikingdom.pojo;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "Tour") // Tên bảng trong CSDL
 public class Tour {
-	 private Integer tourID; // Đổi từ int sang Integer
-	    private String tourName;
-	    private Integer duration; // Đổi từ int sang Integer
-	    private String description;
-	    private double tourPrice;
-	    private Timestamp startDate;
-	    private Timestamp endDate;
-	    private String image;
-	    private boolean status;
-	    private String departureLocation;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Tự động tăng cho khóa chính
+    @Column(name = "tourID") // Tên cột trong CSDL
+    private Integer tourID; 
 
-	    // Constructor không tham số
-	    public Tour() {
-	    }
+    @Column(name = "tourName", nullable = false, length = 100)
+    private String tourName;
 
-	    // Constructor có tham số
-	    public Tour(Integer tourID, String tourName, Integer duration, String description, double tourPrice, 
-	                Timestamp startDate, Timestamp endDate, String image, boolean status, String departureLocation) {
-	        this.tourID = tourID;
-	        this.tourName = tourName;
-	        this.duration = duration;
-	        this.description = description;
-	        this.tourPrice = tourPrice;
-	        this.startDate = startDate;
-	        this.endDate = endDate;
-	        this.image = image;
-	        this.status = status;
-	        this.departureLocation = departureLocation;
-	    }
+    @Column(name = "duration")
+    private Integer duration;
 
-	    // Getters và Setters
-	    public Integer getTourID() {
-	        return tourID;
-	    }
+    @Column(name = "description", columnDefinition = "TEXT")
+    private String description;
 
-	    public void setTourID(Integer tourID) {
-	        this.tourID = tourID;
-	    }
+    @Column(name = "tourPrice", precision = 10, scale = 2)
+    private double tourPrice;
 
-	    public String getTourName() {
-	        return tourName;
-	    }
+    @Column(name = "startDate")
+    private LocalDate startDate;
 
-	    public void setTourName(String tourName) {
-	        this.tourName = tourName;
-	    }
+    @Column(name = "endDate")
+    private LocalDate endDate;
 
-	    public Integer getDuration() {
-	        return duration;
-	    }
+    @Column(name = "image", length = 255)
+    private String image;
 
-	    public void setDuration(Integer duration) {
-	        this.duration = duration;
-	    }
+    @Column(name = "status", nullable = false)
+    private boolean status;
 
-	    public String getDescription() {
-	        return description;
-	    }
+    @Column(name = "departureLocation", length = 100)
+    private String departureLocation;
 
-	    public void setDescription(String description) {
-	        this.description = description;
-	    }
+    // Constructor không tham số
+    public Tour() {
+    }
 
-	    public double getTourPrice() {
-	        return tourPrice;
-	    }
+    // Constructor có tham số
+    public Tour(Integer tourID, String tourName, Integer duration, String description, double tourPrice, 
+                LocalDate startDate, LocalDate endDate, String image, boolean status, String departureLocation) {
+        this.tourID = tourID;
+        this.tourName = tourName;
+        this.duration = duration;
+        this.description = description;
+        this.tourPrice = tourPrice;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.image = image;
+        this.status = status;
+        this.departureLocation = departureLocation;
+    }
 
-	    public void setTourPrice(double tourPrice) {
-	        this.tourPrice = tourPrice;
-	    }
+    // Getters và Setters
+    public Integer getTourID() {
+        return tourID;
+    }
 
-	    public Timestamp getStartDate() {
-	        return startDate;
-	    }
+    public void setTourID(Integer tourID) {
+        this.tourID = tourID;
+    }
 
-	    public void setStartDate(Timestamp startDate) {
-	        this.startDate = startDate;
-	    }
+    public String getTourName() {
+        return tourName;
+    }
 
-	    public Timestamp getEndDate() {
-	        return endDate;
-	    }
+    public void setTourName(String tourName) {
+        this.tourName = tourName;
+    }
 
-	    public void setEndDate(Timestamp endDate) {
-	        this.endDate = endDate;
-	    }
+    public Integer getDuration() {
+        return duration;
+    }
 
-	    public String getImage() {
-	        return image;
-	    }
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
 
-	    public void setImage(String image) {
-	        this.image = image;
-	    }
+    public String getDescription() {
+        return description;
+    }
 
-	    public boolean isStatus() {
-	        return status;
-	    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	    public void setStatus(boolean status) {
-	        this.status = status;
-	    }
+    public double getTourPrice() {
+        return tourPrice;
+    }
 
-	    public String getDepartureLocation() {
-	        return departureLocation;
-	    }
+    public void setTourPrice(double tourPrice) {
+        this.tourPrice = tourPrice;
+    }
 
-	    public void setDepartureLocation(String departureLocation) {
-	        this.departureLocation = departureLocation;
-	    }
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getDepartureLocation() {
+        return departureLocation;
+    }
+
+    public void setDepartureLocation(String departureLocation) {
+        this.departureLocation = departureLocation;
+    }
 }
