@@ -12,7 +12,7 @@
 		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 		<mapping class="koikingdom.pojo.Account" />
 		<mapping class="koikingdom.pojo.KoiFish" />
-		
+		<mapping class="koikingdom.pojo.Farm" />
 
 	</session-factory>
 
