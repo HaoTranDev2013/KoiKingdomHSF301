@@ -11,6 +11,12 @@ public class AccountService implements IAccountService{
 	
 	
 
+	
+	public AccountService() {
+		super();
+	}
+
+
 
 	public AccountService(AccountRepo accountRepo) {
 		super();

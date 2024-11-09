@@ -1,5 +1,7 @@
 package koikingdom.repository;
 
+
+
 import koikingdom.pojo.Account;
 
 public interface IAccountRepo {

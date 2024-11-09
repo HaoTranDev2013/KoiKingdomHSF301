@@ -13,6 +13,8 @@
 		<mapping class="koikingdom.pojo.Account" />
 		<mapping class="koikingdom.pojo.KoiFish" />
 		<mapping class="koikingdom.pojo.Farm" />
+		<mapping class="koikingdom.pojo.Tour" />
+		<mapping class="koikingdom.pojo.Booking" />
 
 	</session-factory>
 

@@ -1,5 +1,6 @@
 package koikingdom.dao;
 
+
 import koikingdom.pojo.Account;
 
 public interface IAccountDAO {
